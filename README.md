@@ -26,44 +26,59 @@ Execute the necessary commands/batch file for the desired output.
 # WINDOWS COMMANDS:
 ## Exercise 1: Basic Directory and File Operations
 Create a directory named "MyLab" on the desktop.
+```
+mkdir %userprofile%\Desktop\MyLab
+```
 
+![image](https://github.com/greffinaprem/Windows-basic-commands-batchscript/assets/119475603/36755895-6437-4fcc-880b-b8513c9c6bc4)
 
 ## COMMAND AND OUTPUT
 
 Change to the "MyLab" directory and create an empty text file named "MyFile.txt" inside it.
 
-![image](https://github.com/greffinaprem/Windows-basic-commands-batchscript/assets/119475603/2331915f-93a6-431d-9426-045c669af6fd)
-
-
+![image](https://github.com/greffinaprem/Windows-basic-commands-batchscript/assets/119475603/60d0641f-0104-44a4-a0af-717062f486d9)
 
 ## COMMAND AND OUTPUT
 
 List the contents of the "MyLab" directory.
+```
+cd %userprofile%\Desktop\MyLab
+```
 
-![image](https://github.com/greffinaprem/Windows-basic-commands-batchscript/assets/119475603/3a948fc5-3881-47b1-9755-7ae0beef5de8)
+![image](https://github.com/greffinaprem/Windows-basic-commands-batchscript/assets/119475603/de4831c8-3c42-425e-a268-1b113e305a11)
 
-![image](https://github.com/greffinaprem/Windows-basic-commands-batchscript/assets/119475603/49c55f82-2712-454e-8b1b-573477ba780d)
+![image](https://github.com/greffinaprem/Windows-basic-commands-batchscript/assets/119475603/2fe4ab35-88d1-437a-8c00-3f8f9b4629c3)
 
 
 ## COMMAND AND OUTPUT
 
 Copy "MyFile.txt" to a new folder named "Backup" on the desktop.
+```
+dir %userprofile%\Desktop\MyLab
+```
 
-![image](https://github.com/greffinaprem/Windows-basic-commands-batchscript/assets/119475603/d6825945-6ac8-461e-8efb-c73d9741998a)
+![image](https://github.com/greffinaprem/Windows-basic-commands-batchscript/assets/119475603/0b2e5b33-5ce9-40a5-8aeb-b3c555d6edd3)
 
 
 ## COMMAND AND OUTPUT
 
 Move the "MyLab" directory to the "Documents" folder.
+```
+mkdir %userprofile%\Desktop\Backup
 
-![image](https://github.com/greffinaprem/Windows-basic-commands-batchscript/assets/119475603/b5f3317e-70f4-406c-941d-ae02830275d9)
+copy MyFile.txt %userprofile%\Desktop\Backup
+```
 
-![image](https://github.com/greffinaprem/Windows-basic-commands-batchscript/assets/119475603/978d5492-0090-404e-9f76-009bc351f85b)
+![image](https://github.com/greffinaprem/Windows-basic-commands-batchscript/assets/119475603/ca245612-87e9-4f85-ae2d-4a01dd992c86)
+
+
+![image](https://github.com/greffinaprem/Windows-basic-commands-batchscript/assets/119475603/ec2cb6cb-1e31-4367-9e34-4afd03d7c04c)
 
 
 ## COMMAND AND OUTPUT
-
+```
 mv Myfile.txt %userprofile%\Documents
+```
 
 ![image](https://github.com/greffinaprem/Windows-basic-commands-batchscript/assets/119475603/6a52af6a-2895-4ae7-a05f-3971c793329e)
 
@@ -71,8 +86,20 @@ mv Myfile.txt %userprofile%\Documents
 
 ## Exercise 2: Advanced Batch Scripting
 Create a batch script named "BackupScript.bat" that creates a backup of files with the ".docx" extension from the "Documents" folder to a new folder named "DocBackup" on the desktop.
-
-@echo off mkdir %userprofile%\Desktop\DocBackup copy %userprofile%\Documents*.docx %userprofile%\Desktop\DocBackup echo Backup completed successfully!
+```
+@echo off
+mkdir %userprofile%\Desktop\DocBackup
+copy %userprofile%\Documents\*.docx %userprofile%\Desktop\DocBackup
+echo Backup completed successfully!
+```
+Modify the script to delete files with the ".docx" extension from the "Documents" folder after creating the backup.
+```
+@echo off
+mkdir %userprofile%\Desktop\DocBackup
+copy %userprofile%\Documents\*.docx %userprofile%\Desktop\DocBackup
+del %userprofile%\Documents\*.docx
+echo Backup and deletion completed successfully!
+```
 
 ## OUTPUT
 
